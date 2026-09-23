@@ -1,0 +1,35 @@
+{
+  "name": "ffluxx-sites",
+  "version": "1.0.0",
+  "description": "ffluxx.com, soft.ffluxx.com and studio.ffluxx.com",
+  "scripts": {
+    "dev:parent": "vite --mode parent",
+    "dev:soft": "vite --mode soft",
+    "dev:studio": "vite --mode studio",
+    "build:parent": "node scripts/build.mjs parent",
+    "build:soft": "node scripts/build.mjs soft",
+    "build:studio": "node scripts/build.mjs studio",
+    "build": "npm run build:parent && npm run build:soft && npm run build:studio"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TechFlux1011/ffluxx-site.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TechFlux1011/ffluxx-site/issues"
+  },
+  "homepage": "https://github.com/TechFlux1011/ffluxx-site#readme",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
+    "vite": "^5.4.21"
+  },
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  }
+}

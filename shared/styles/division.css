@@ -1,0 +1,50 @@
+/* Shared by every division page (soft, soft/services, studio). */
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px;}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:66px;position:relative;z-index:1;}
+.brand-name b{font-weight:800;color:var(--accent);}
+/* split wordmark — each half is its own destination.
+   Links cannot nest, so the two halves are sibling anchors set flush
+   together; the word still reads as one. Hovering tracks the letters
+   out and names where that half goes. */
+.lockup{display:flex;align-items:center;position:relative;}
+.part{display:inline-flex;align-items:center;border-radius:2px;}
+.part-parent{gap:11px;}
+.part .word{
+  font-family:var(--display);font-weight:800;font-size:19px;letter-spacing:-.02em;
+  display:inline-block;
+  transition:letter-spacing .3s cubic-bezier(.2,.7,.3,1), color .2s ease;
+}
+.part-parent   .word{color:var(--paper);}
+.part-division .word{color:var(--accent);}
+.part:hover .word,
+.part:focus-visible .word{letter-spacing:.055em;}
+.part-parent:hover .word{color:#FFFFFF;}
+.dest{
+  position:absolute;left:100%;top:50%;margin-left:16px;
+  transform:translateY(-50%) translateX(-5px);
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--accent);white-space:nowrap;opacity:0;pointer-events:none;
+  transition:opacity .22s ease, transform .22s ease;
+}
+.part:hover .dest,
+.part:focus-visible .dest{opacity:1;transform:translateY(-50%) translateX(0);}
+/* no hover on touch, and no room for the readout beside the nav */
+@media (max-width:980px){.dest{display:none;}}
+@media (max-width:680px){.site-nav a.hide-sm{display:none;}}
+.hero h1 em{font-style:normal;color:var(--accent);}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:clamp(26px,4vw,44px);}
+.section-head h2{font-family:var(--display);font-weight:700;font-size:clamp(24px,3.2vw,38px);letter-spacing:-.03em;margin:0;}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;cursor:pointer;
+  font-family:var(--mono);font-size:12px;letter-spacing:.06em;
+  background:transparent;color:var(--paper);
+  border:1px solid color-mix(in srgb, var(--accent) 45%, var(--line));
+  border-radius:2px;padding:11px 16px;
+  transition:border-color .22s ease,color .22s ease,background .22s ease;
+}
+.btn .arw{transition:transform .22s ease;}
+.btn:hover .arw{transform:translateX(4px);}
+.msg.err{color:#F09A92;}
+.msg.ok{color:var(--accent);}
+.site-foot{border-top:1px solid var(--line);padding:clamp(32px,5vw,52px) 0 40px;}
+.foot-domains a.here{color:var(--accent);}

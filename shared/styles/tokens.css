@@ -1,0 +1,24 @@
+/* ============================================================
+   ffluxx design tokens — shared by ffluxx.com, soft and studio.
+   Each division sets --accent (and friends) in its own theme.css.
+   ============================================================ */
+:root{
+  --ink:#0E1220;
+  --ink-2:#161B2E;
+  --line:#262C44;
+  --paper:#E7E9F0;
+  --muted:#838BAB;
+
+  --violet:#7B5CFF;        /* ffluxxSoft — primary wave    */
+  --violet-pale:#B9A8FF;   /* ffluxxSoft — second wave     */
+  --violet-lt:#A38FFF;     /* ffluxxSoft — UI accent       */
+  --sulfur:#E9DC4E;        /* ffluxxStudio — primary wave  */
+  --amber:#E4A93F;         /* ffluxxStudio — second wave   */
+
+  --display:"Syne", ui-sans-serif, system-ui, sans-serif;
+  --body:"Archivo", ui-sans-serif, system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --pad:clamp(20px, 5vw, 72px);
+  --maxw:1240px;
+}

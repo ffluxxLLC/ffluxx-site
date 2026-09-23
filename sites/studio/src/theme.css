@@ -1,0 +1,5 @@
+/* ffluxxStudio — only the accent changes per division */
+:root{
+  --accent:var(--sulfur);
+  --accent-tint:rgba(233,220,78,.08);
+}

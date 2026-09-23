@@ -1,0 +1,71 @@
+.site-nav a:hover{color:var(--paper);}
+.hero-mark path{fill:none;stroke-linecap:round;shape-rendering:geometricPrecision;}
+.hero p{color:var(--muted);font-size:clamp(15px,1.6vw,18px);max-width:42ch;margin:0;}
+/* ---------- games: image-led, stacked full width ---------- */
+.games{padding:clamp(46px,7vw,84px) 0 clamp(16px,3vw,32px);}
+.game{
+  padding-bottom:clamp(40px,6vw,76px);margin-bottom:clamp(40px,6vw,76px);
+  border-bottom:1px solid var(--line);
+  opacity:0;transform:translateY(26px);
+  transition:opacity .75s ease, transform .75s cubic-bezier(.2,.7,.3,1);
+}
+.game.in{opacity:1;transform:none;}
+.game:last-of-type{border-bottom:0;}
+/* key art: cinematic, full width — the game IS the image */
+.keyart{
+  position:relative;aspect-ratio:16/9;width:100%;
+  background:var(--ink-2);border:1px solid var(--line);border-radius:3px;
+  overflow:hidden;margin-bottom:clamp(22px,3vw,34px);
+}
+.keyart svg{position:absolute;inset:0;width:100%;height:100%;display:block;}
+.keyart path{fill:none;stroke-width:1.2;shape-rendering:geometricPrecision;}
+.keyart .slot{
+  position:absolute;left:16px;bottom:14px;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);
+}
+.game-body{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(24px,4vw,60px);align-items:start;}
+@media (max-width:860px){.game-body{grid-template-columns:1fr;gap:26px;}}
+.pill{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  padding:5px 9px;border:1px solid var(--line);border-radius:2px;color:var(--muted);}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none;}
+.game h3{font-family:var(--display);font-weight:700;font-size:clamp(30px,4.6vw,56px);
+  line-height:1;letter-spacing:-.035em;margin:0 0 14px;}
+.game .lede{color:var(--paper);margin:0 0 20px;max-width:52ch;font-size:17px;}
+.game .more{color:var(--muted);margin:0 0 24px;max-width:52ch;font-size:15.5px;}
+/* fact sheet — studio-specific: what a games audience checks first */
+.facts{border-top:1px solid var(--line);padding-top:16px;margin:0;}
+.facts div{display:grid;grid-template-columns:88px 1fr;gap:14px;padding:8px 0;align-items:baseline;}
+.facts dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+.facts dd{margin:0;font-size:15px;color:var(--paper);}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;}
+.btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-tint);}
+/* a store link that does not exist yet says so, rather than going nowhere */
+.btn.pending{
+  cursor:default;color:var(--muted);border-style:dashed;border-color:var(--line);
+}
+.btn.pending:hover{background:transparent;color:var(--muted);border-color:var(--line);}
+/* ---------- follow ---------- */
+.follow{border-top:1px solid var(--line);padding:clamp(52px,8vw,96px) 0;}
+.follow .wrap{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(26px,5vw,64px);align-items:start;}
+@media (max-width:860px){.follow .wrap{grid-template-columns:1fr;}}
+.follow h2{font-family:var(--display);font-weight:800;font-size:clamp(28px,4.4vw,50px);letter-spacing:-.035em;line-height:1;margin:10px 0 0;}
+.follow .note{color:var(--muted);font-size:15px;margin:16px 0 0;max-width:40ch;}
+.pick label:has(input:checked){border-color:var(--accent);background:var(--accent-tint);color:var(--accent);}
+/* ---------- devlog: titled entries, not one-line notes ---------- */
+.devlog{border-top:1px solid var(--line);padding:clamp(48px,7vw,88px) 0;}
+.entry{
+  display:grid;grid-template-columns:150px 1fr;gap:clamp(16px,3vw,40px);
+  padding:26px 0;border-top:1px solid var(--line);
+}
+.entry:first-of-type{border-top:0;}
+@media (max-width:700px){.entry{grid-template-columns:1fr;gap:8px;}}
+.entry time{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;}
+.entry .game-tag{display:block;margin-top:6px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);}
+.entry h3{font-family:var(--display);font-weight:700;font-size:clamp(19px,2.2vw,25px);letter-spacing:-.02em;margin:0 0 8px;}
+.entry p{margin:0;color:var(--muted);font-size:15.5px;max-width:62ch;}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important;}
+  html{scroll-behavior:auto;}
+  .game{opacity:1;transform:none;}
+}

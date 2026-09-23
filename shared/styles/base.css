@@ -1,0 +1,54 @@
+/* Shared by every page on every site. Loaded after tokens.css. */
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;background:var(--ink);color:var(--paper);
+  font-family:var(--body);font-size:17px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad);}
+.eyebrow{
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--muted);
+}
+.site-head{position:sticky;top:0;z-index:50;}
+/* One blur for the whole header, tapered at the foot. The frosting lives on
+   a ::before layer so the mask fades the blur without touching the nav or the
+   wave sitting above it. Solid behind the navbar, dissolving through the
+   wave band, clear by the bottom edge. */
+.site-head::before{
+  content:"";position:absolute;inset:0;z-index:0;
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  background:rgba(14,18,32,.78);
+  -webkit-mask-image:linear-gradient(to bottom,#000 0,#000 78.5%,rgba(0,0,0,.95) 84%,rgba(0,0,0,.82) 88%,rgba(0,0,0,.62) 92%,rgba(0,0,0,.38) 95.5%,rgba(0,0,0,.17) 98%,transparent 100%);
+          mask-image:linear-gradient(to bottom,#000 0,#000 78.5%,rgba(0,0,0,.95) 84%,rgba(0,0,0,.82) 88%,rgba(0,0,0,.62) 92%,rgba(0,0,0,.38) 95.5%,rgba(0,0,0,.17) 98%,transparent 100%);
+}
+.brand{display:flex;align-items:center;gap:11px;}
+.brand svg{display:block;overflow:hidden;}
+.brand svg path{shape-rendering:geometricPrecision;}
+.brand-name{font-family:var(--display);font-weight:800;font-size:19px;letter-spacing:-.02em;}
+.site-nav{display:flex;align-items:center;gap:26px;}
+.site-nav a{
+  font-family:var(--mono);font-size:12px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--muted);transition:color .2s ease;
+}
+/* ---------- scroll progress wave ----------
+   Back inside the header and sitting above its blur layer. No background and
+   no blur of its own — the header's tapered frosting is what shows through. */
+.scrollwave{
+  height:18px;width:100%;overflow:hidden;
+  background:transparent;position:relative;z-index:1;
+  opacity:0;transition:opacity .45s ease;pointer-events:none;
+}
+.scrollwave.on{opacity:1;}
+.scrollwave svg{display:block;width:100%;height:18px;}
+.scrollwave path{fill:none;stroke-width:1.5;stroke-linecap:round;shape-rendering:geometricPrecision;}
+.sw-ghost path{stroke-opacity:0;}
+.hero p strong{color:var(--paper);font-weight:500;}
+.foot-grid{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;align-items:flex-start;}
+.foot-domains{display:flex;flex-direction:column;gap:9px;}
+.foot-domains a{font-family:var(--mono);font-size:13px;color:var(--muted);transition:color .2s ease;}
+.foot-domains a:hover{color:var(--paper);}
+.foot-note{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}

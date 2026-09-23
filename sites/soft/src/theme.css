@@ -1,0 +1,6 @@
+/* ffluxxSoft — only the accent changes per division */
+:root{
+  --accent:var(--violet-lt);
+  --accent-solid:var(--violet);
+  --accent-tint:rgba(123,92,255,.08);
+}
