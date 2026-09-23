@@ -12,20 +12,21 @@ export const nav = [
 
 export const hero = {
   eyebrow: 'ffluxx — portfolio',
-  title: 'Everything we make, ',
-  titleEm: 'in one place.',
-  body: 'ffluxx builds software and video games. **Two divisions, five projects, one of them you can use right now.** This is where you can watch the rest take shape.',
+  title: 'Software that\'s crafted',
+  titleEm: 'with Character.',
+  body: 'At ffluxx we build software and video games. **Two divisions, each specializing in their craft.** This is where you can watch our work unfold.',
 };
 
 export const work = {
-  title: 'The work',
+  title: 'Our work',
   // placeholder art label per division
   artLabel: { soft: 'Cover art pending', studio: 'Key art pending' },
 };
 
 export const statement = {
   eyebrow: 'The name',
-  title: 'Flux',
-  body: "Nothing worth making sits still. Software and games pull in different directions — different tools, different audiences, different rhythms — and ffluxx exists to hold both without pretending they're the same thing.",
-  sub: "The mark is two waves, mirrored. They run apart, cross, run apart again, and cross once more: two lines, two X's, one word. Range, not restlessness.",
+  title: 'ffluxx',
+  definition: 'noun. a state of continuous change or movement.',
+  body: "Life is full of ups and downs. So here at ffluxx we strive to craft meaningful experiences through software and video games. We craft our software to feel interactive and dynamic. **Software and games crafted with character.**",
+  sub: "The mark is two waves, mirrored. They represent a state of continuous change, and the two divisions of ffluxx. The mark is a symbol of our philosophy: to craft software and games that are dynamic, interactive, and full of character.",
 };
