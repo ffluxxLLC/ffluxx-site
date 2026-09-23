@@ -28,13 +28,13 @@ export const working = {
   cards: [
     {
       href: '#first-party', tag: 'First-party', title: 'Our own software',
-      body: '**The IP is ours.** We decide what gets built, how it works and when it ships. Nobody commissioned these, and nobody else can take them away.',
+      body: '**Our IP.**.',
       // {apps} and {live} are filled in from projects.js
       go: ({ apps, live }) => `${apps} apps, ${live} you can use today`,
     },
     {
       href: '#client-work', tag: 'Third-party', title: 'Built for other companies',
-      body: "**The IP is the customer's.** We build it under contract and hand over the code and the accounts at the end. It carries their name, and it stays theirs.",
+      body: "**Our customer's IP.** We build it under contract and hand over the code and the accounts at the end. It carries their name, and it stays theirs.",
       go: () => 'Taking on new work',
     },
   ],
