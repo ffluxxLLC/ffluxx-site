@@ -1,0 +1,13 @@
+/* ---------- project cards: the whole card opens the project page ----------
+   The card's title link is stretched over the card with ::after, so a click
+   anywhere lands on it; buttons sit above that layer so they still work. */
+.has-card-link{position:relative;}
+.card-link::after{content:"";position:absolute;inset:0;z-index:0;}
+.has-card-link .btn{position:relative;z-index:1;}
+h3 .card-link{transition:color .2s ease;}
+h3 .card-link:hover{color:var(--accent);}
+.has-card-link:hover .canvas,
+.has-card-link:hover .keyart{border-color:color-mix(in srgb, var(--accent) 45%, var(--line));}
+.canvas,.keyart{transition:border-color .3s ease;}
+/* real artwork, when a project has an `image` */
+.canvas img,.keyart img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}

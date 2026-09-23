@@ -1,6 +1,6 @@
 import { Arrowed } from '@shared/components/Arrowed.jsx';
-import { divisions } from '@shared/data/company.js';
-import { projectsIn, liveCount } from '@shared/data/projects.js';
+import { divisions } from '@content/company.js';
+import { projectsIn, liveCount, divisionUpdates } from '@shared/data/projects.js';
 import { word } from '@shared/lib/copy.js';
 import { DivisionHeader } from '@shared/components/DivisionHeader.jsx';
 import { SiteFooter } from '@shared/components/SiteFooter.jsx';
@@ -8,11 +8,11 @@ import { HeroMark } from '@shared/components/WaveMark.jsx';
 import { SectionHead } from '@shared/components/SectionHead.jsx';
 import { Rich } from '@shared/components/Rich.jsx';
 import { SignupProvider, SignupSection } from '@shared/components/Signup.jsx';
-import { AppCard } from '../components/AppCard.jsx';
+import { ProjectCard } from '@shared/components/project/ProjectCard.jsx';
 import { CategoryCards } from '../components/CategoryCards.jsx';
 import { ClientWork } from '../components/ClientWork.jsx';
 import { BuildNotes } from '../components/BuildNotes.jsx';
-import * as c from '../content/home.js';
+import * as c from '@content/soft/home.js';
 
 const soft = divisions.soft;
 const apps = projectsIn('soft');
@@ -30,7 +30,7 @@ export default function Home() {
             <div className="hero-grid">
               <div>
                 <span className="eyebrow">{c.hero.eyebrow}</span>
-                <h1>{c.hero.title}<em>{c.hero.titleEm}</em></h1>
+                <h1>{c.hero.title.trimEnd() + " "}<em>{c.hero.titleEm}</em></h1>
                 <a className="parent-link" href="https://ffluxx.com">part of ffluxx <span className="arw">↗</span></a>
               </div>
               <div className="hero-cta">
@@ -53,7 +53,7 @@ export default function Home() {
           <div className="wrap">
             <SectionHead title={c.firstParty.title} eyebrow={c.firstParty.eyebrow(counts)} />
             {apps.map((app, i) => (
-              <AppCard key={app.id} app={app} flip={i % 2 === 1} artLabel={c.firstParty.artLabel} />
+              <ProjectCard key={app.id} project={app} variant="app" flip={i % 2 === 1} artLabel={c.firstParty.artLabel} />
             ))}
           </div>
         </section>
@@ -65,7 +65,7 @@ export default function Home() {
           endpoint={c.signup.endpoint} options={notifiable}
           copy={{ noun: 'app', payloadKey: 'apps', success: c.signup.success }} />
 
-        <BuildNotes notes={c.buildNotes} />
+        <BuildNotes notes={divisionUpdates('soft', c.buildNotes)} />
       </main>
       <SiteFooter division={soft} />
     </SignupProvider>

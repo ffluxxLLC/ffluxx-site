@@ -22,7 +22,7 @@ export function SignupProvider({ initial, sectionId, children }) {
   return <Ctx.Provider value={{ picked, setPicked, emailRef, notify }}>{children}</Ctx.Provider>;
 }
 
-export const useNotify = () => useContext(Ctx).notify;
+export const useNotify = () => useContext(Ctx)?.notify;
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 

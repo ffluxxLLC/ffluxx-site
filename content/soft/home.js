@@ -1,6 +1,6 @@
 /* ============================================================
    soft.ffluxx.com — homepage content.
-   Apps themselves live in shared/data/projects.js.
+   Apps themselves live in content/projects/ — one file each.
    **double asterisks** make text bold.
    ============================================================ */
 
@@ -72,11 +72,23 @@ export const signup = {
   // While empty the form validates, then says nothing was saved.
   endpoint: '',
   success: 'Signed up. We\u2019ll be in touch when there\u2019s something to try.',
+  // heading of the signup form on each app's own page
+  projectTitle: 'Hear when {name} is ready',
 };
 
-/* BUILD NOTES — newest first. date is YYYY-MM-DD. */
+/* Each app's own page (soft.ffluxx.com/apps/<name>/) — header links. */
+export const projectPage = {
+  listHref: '/#first-party',
+  nav: [
+    { label: 'All apps', href: '/#first-party' },
+    { label: 'Services', href: '/services/' },
+    { label: 'Updates', href: '#updates', hideSm: true },
+  ],
+};
+
+/* BUILD NOTES — division-wide notes only. date is YYYY-MM-DD.
+   Notes about one app go in that app's `updates` in content/projects/ —
+   they're merged in here automatically, newest first. */
 export const buildNotes = [
-  { date: '2026-08-26', who: 'ffluxxSoft',  text: 'division site is up. Both apps now have a home of their own to grow into.' },
-  { date: '2026-08-20', who: 'Second Home', text: "reworked search around what's missing rather than what's listed. Turns out people describe the gap, not the object." },
-  { date: '2026-08-11', who: 'Plant Guide', text: 'care steps now shift with local season instead of a fixed calendar. Same plant, different week, different advice.' },
+  { date: '2026-08-26', body: 'division site is up. Both apps now have a home of their own to grow into.' },
 ];

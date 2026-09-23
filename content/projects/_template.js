@@ -1,0 +1,65 @@
+/* ============================================================
+   PROJECT TEMPLATE — copy this file to add a project.
+
+   1. Copy it to content/projects/<name>.js, e.g. moonbeam.js.
+      The file name becomes the web address:
+        soft   → soft.ffluxx.com/apps/moonbeam/
+        studio → studio.ffluxx.com/games/moonbeam/
+      Use lowercase letters, numbers and dashes only.
+   2. Fill in the fields below and push. That's all: the card appears on
+      ffluxx.com and on the division homepage, the project page is built,
+      and counts like "3 apps · one live" update themselves.
+
+   Files starting with _ (like this one) are ignored.
+   **double asterisks** make text bold anywhere text is shown.
+   ============================================================ */
+
+export default {
+  name: 'Project Name',
+  division: 'soft',            // 'soft' or 'studio'
+  status: 'dev',               // 'dev' → "In development", 'live' → "Available now"
+  order: 10,                   // position in every list, lowest first
+
+  // one or two sentences — shown on every card and at the top of the page
+  summary: 'What it is and who it is for.',
+
+  // the small pill beside the status: platform for apps, genre for games
+  tag: 'iOS first',
+
+  // ---- project page -------------------------------------------------
+  // longer description, one string per paragraph.
+  // (studio cards also show the first paragraph under the summary)
+  about: [
+    'A paragraph or two about the project.',
+  ],
+
+  // "What it does" — short lines, shown as a checklist
+  features: [
+    'One thing it does',
+    'Another thing it does',
+  ],
+
+  // the fact sheet: [label, value] pairs
+  facts: [
+    ['Platform', 'iOS, with Android to follow'],
+    ['Status', 'In development'],
+    ['Availability', 'No date yet'],
+  ],
+
+  // main button. Leave out href while there's nothing to link to and it
+  // shows as a greyed-out "not up yet" button. Leave out `link` entirely
+  // for no button. Projects that aren't live also get a "notify me" button.
+  link: { label: 'Store page not up yet' /* , href: 'https://…' */ },
+
+  // artwork: put the file in sites/<soft|studio>/public/projects/ and write
+  // its path here, e.g. '/projects/project-name.png'. Leave out for the
+  // placeholder wave art (`seed` picks its shape — any number).
+  // image: '/projects/project-name.png',
+  seed: 1,
+
+  // updates, newest first. They also appear in the division's Build notes
+  // (soft) or Devlog (studio). date is YYYY-MM-DD; title is optional.
+  updates: [
+    // { date: '2026-10-01', title: 'A short headline', body: 'What changed.' },
+  ],
+};

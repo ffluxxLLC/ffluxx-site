@@ -1,4 +1,4 @@
-import { company } from '../data/company.js';
+import { company } from '../../content/company.js';
 import { MiniMark } from './WaveMark.jsx';
 import { ScrollWave } from './ScrollWave.jsx';
 import { NavLinks } from './NavLinks.jsx';

@@ -4,6 +4,7 @@ import '@shared/styles/division.css';
 import '@shared/styles/division-home.css';
 import '../theme.css';
 import '../home.css';
+import '@shared/styles/cards.css';
 import { mount } from '@shared/lib/mount.jsx';
 import Home from '../pages/Home.jsx';
 

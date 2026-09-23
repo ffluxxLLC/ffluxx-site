@@ -1,5 +1,5 @@
 import { Arrowed } from '@shared/components/Arrowed.jsx';
-import { company, divisions } from '@shared/data/company.js';
+import { company, divisions } from '@content/company.js';
 import { projects, projectsIn, liveCount } from '@shared/data/projects.js';
 import { word, plural } from '@shared/lib/copy.js';
 import { SiteFooter } from '@shared/components/SiteFooter.jsx';
@@ -7,7 +7,7 @@ import { HeroMark } from '@shared/components/WaveMark.jsx';
 import { Rich } from '@shared/components/Rich.jsx';
 import { ParentHeader } from '../components/ParentHeader.jsx';
 import { WorkList } from '../components/WorkList.jsx';
-import * as c from '../content/home.js';
+import * as c from '@content/parent/home.js';
 
 const live = liveCount(projects);
 const workEyebrow = `${plural(projects.length, 'project', 'projects')} · ${live ? word(live) + ' live' : 'all in development'}`;
@@ -23,7 +23,7 @@ export default function Home() {
             <div className="hero-grid">
               <div>
                 <span className="eyebrow">{c.hero.eyebrow}</span>
-                <h1>{c.hero.title}<em>{c.hero.titleEm}</em></h1>
+                <h1>{c.hero.title.trimEnd() + " "}<em>{c.hero.titleEm}</em></h1>
               </div>
               <p><Rich text={c.hero.body} bold="strong" /></p>
             </div>
@@ -60,10 +60,11 @@ export default function Home() {
             <div>
               <span className="eyebrow">{c.statement.eyebrow}</span>
               <h2>{c.statement.title}</h2>
+              {c.statement.definition && <p className="definition">{c.statement.definition}</p>}
             </div>
             <div>
-              <p>{c.statement.body}</p>
-              <p className="sub">{c.statement.sub}</p>
+              <p><Rich text={c.statement.body} /></p>
+              <p className="sub"><Rich text={c.statement.sub} /></p>
             </div>
           </div>
         </section>

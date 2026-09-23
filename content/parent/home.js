@@ -1,7 +1,7 @@
 /* ============================================================
    ffluxx.com — homepage content.
-   The project list comes from shared/data/projects.js, and the
-   division cards from shared/data/company.js.
+   The project list comes from content/projects/, and the
+   division cards from content/company.js.
    **double asterisks** make text bold.
    ============================================================ */
 

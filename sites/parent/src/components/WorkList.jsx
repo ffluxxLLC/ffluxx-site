@@ -1,35 +1,6 @@
-import { Arrowed } from '@shared/components/Arrowed.jsx';
 import { useEffect, useRef } from 'react';
-import { company, divisions } from '@shared/data/company.js';
-import { useReveal } from '@shared/lib/useReveal.js';
-import { WaveField } from '@shared/components/WaveField.jsx';
-import { StatusPill } from '@shared/components/Pills.jsx';
-
-function WorkItem({ project, flip, artLabel }) {
-  const d = divisions[project.division];
-  const [ref, isIn] = useReveal();
-  // live projects link to the thing itself, the rest to their division
-  const href = project.link?.url ?? d.url;
-  const label = project.link?.display ?? d.domain;
-  return (
-    <article ref={ref} className={'item' + (flip ? ' flip' : '') + (isIn ? ' in' : '')}
-             style={{ '--accent': d.accentVar }}>
-      <div className="canvas">
-        <WaveField seed={project.seed} color={d.fieldColor} />
-        <span className="tag">{artLabel[project.division]}</span>
-      </div>
-      <div className="meta">
-        <div className="tags">
-          <span className="pill division">{d.fullName}</span>
-          <StatusPill status={project.status} />
-        </div>
-        <h3>{project.name}</h3>
-        <p>{project.summary}</p>
-        <a className="go" href={href}><Arrowed text={label} /></a>
-      </div>
-    </article>
-  );
-}
+import { company } from '@content/company.js';
+import { ProjectCard } from '@shared/components/project/ProjectCard.jsx';
 
 /* Spine: two waves down the left edge, crossing exactly at each
    boundary between projects. Wide screens only. */
@@ -89,7 +60,7 @@ export function WorkList({ projects, artLabel }) {
         <path id="spine-b" ref={b} stroke={company.wave[1]} />
       </svg>
       {projects.map((p, i) => (
-        <WorkItem key={p.id} project={p} flip={i % 2 === 1} artLabel={artLabel} />
+        <ProjectCard key={p.id} project={p} variant="row" flip={i % 2 === 1} artLabel={artLabel[p.division]} />
       ))}
     </div>
   );

@@ -1,14 +1,14 @@
-import { divisions } from '@shared/data/company.js';
-import { projectsIn, liveCount } from '@shared/data/projects.js';
+import { divisions } from '@content/company.js';
+import { projectsIn, liveCount, divisionUpdates } from '@shared/data/projects.js';
 import { DivisionHeader } from '@shared/components/DivisionHeader.jsx';
 import { SiteFooter } from '@shared/components/SiteFooter.jsx';
 import { HeroMark } from '@shared/components/WaveMark.jsx';
 import { SectionHead } from '@shared/components/SectionHead.jsx';
 import { Rich } from '@shared/components/Rich.jsx';
 import { SignupProvider, SignupSection } from '@shared/components/Signup.jsx';
-import { GameCard } from '../components/GameCard.jsx';
+import { ProjectCard } from '@shared/components/project/ProjectCard.jsx';
 import { Devlog } from '../components/Devlog.jsx';
-import * as c from '../content/home.js';
+import * as c from '@content/studio/home.js';
 
 const studio = divisions.studio;
 const games = projectsIn('studio');
@@ -32,7 +32,7 @@ export default function Home() {
             <div className="hero-grid">
               <div>
                 <span className="eyebrow">{c.hero.eyebrow}</span>
-                <h1>{c.hero.title}<em>{c.hero.titleEm}</em></h1>
+                <h1>{c.hero.title.trimEnd() + " "}<em>{c.hero.titleEm}</em></h1>
                 <a className="parent-link" href="https://ffluxx.com">part of ffluxx <span className="arw">↗</span></a>
               </div>
               <p><Rich text={c.hero.body} bold="strong" /></p>
@@ -44,7 +44,7 @@ export default function Home() {
           <div className="wrap">
             <SectionHead title={c.games.title} eyebrow={gamesEyebrow()} />
             {games.map((g) => (
-              <GameCard key={g.id} game={g} artLabel={c.games.artLabel} notifyLabel={c.games.notifyLabel} />
+              <ProjectCard key={g.id} project={g} variant="game" artLabel={c.games.artLabel} />
             ))}
           </div>
         </section>
@@ -54,7 +54,7 @@ export default function Home() {
           endpoint={c.follow.endpoint} options={games}
           copy={{ noun: 'game', payloadKey: 'games', success: c.follow.success }} />
 
-        <Devlog entries={c.devlog} />
+        <Devlog entries={divisionUpdates('studio', c.devlog)} />
       </main>
       <SiteFooter division={studio} />
     </SignupProvider>

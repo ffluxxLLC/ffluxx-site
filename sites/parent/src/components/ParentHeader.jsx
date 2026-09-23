@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
-import { company, divisions } from '@shared/data/company.js';
+import { company, divisions } from '@content/company.js';
 import { prefersReducedMotion } from '@shared/lib/wave.js';
 import { MiniMark } from '@shared/components/WaveMark.jsx';
 import { ScrollWave } from '@shared/components/ScrollWave.jsx';

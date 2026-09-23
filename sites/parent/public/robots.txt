@@ -1,10 +1,4 @@
 User-agent: *
 Allow: /
 
-# soft/ and studio/ live in this repo but are served on their own
-# subdomains. Keep them out of ffluxx.com's index so the same pages
-# are not listed twice.
-Disallow: /soft/
-Disallow: /studio/
-
 Sitemap: https://ffluxx.com/sitemap.xml

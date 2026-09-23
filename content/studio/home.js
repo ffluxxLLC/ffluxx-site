@@ -1,6 +1,6 @@
 /* ============================================================
    studio.ffluxx.com — homepage content.
-   Games themselves live in shared/data/projects.js.
+   Games themselves live in content/projects/ — one file each.
    **double asterisks** make text bold.
    ============================================================ */
 
@@ -20,7 +20,6 @@ export const hero = {
 export const games = {
   title: 'The games',
   artLabel: 'Key art pending',
-  notifyLabel: 'Tell me when it is',
 };
 
 export const follow = {
@@ -31,23 +30,27 @@ export const follow = {
   // While empty the form validates, then says nothing was saved.
   endpoint: '',
   success: 'Signed up. We\u2019ll be in touch when there\u2019s something to play.',
+  // heading of the signup form on each game's own page
+  projectTitle: 'Know when {name} is playable',
 };
 
-/* DEVLOG — newest first. date is YYYY-MM-DD; tag is a game name or 'ffluxxStudio'. */
+/* Each game's own page (studio.ffluxx.com/games/<name>/) — header links. */
+export const projectPage = {
+  listHref: '/#games',
+  nav: [
+    { label: 'All games', href: '/#games' },
+    { label: 'Updates', href: '#updates', hideSm: true },
+    { label: 'Devlog', href: '/#devlog', hideSm: true },
+  ],
+};
+
+/* DEVLOG — studio-wide entries only. date is YYYY-MM-DD.
+   Entries about one game go in that game's `updates` in content/projects/ —
+   they're merged in here automatically, newest first. */
 export const devlog = [
   {
-    date: '2026-08-26', tag: 'ffluxxStudio',
+    date: '2026-08-26',
     title: 'The studio has a front door',
     body: "studio.ffluxx.com is live. Both games now have somewhere to be seen while they're being made, rather than waiting until there's something to sell.",
-  },
-  {
-    date: '2026-08-18', tag: 'Hellenica',
-    title: 'Time, and how much of it to simulate',
-    body: 'A thousand years is a long time to hold in a real-time game. Working out which centuries deserve detail and which can move quickly.',
-  },
-  {
-    date: '2026-08-09', tag: 'Business Tycoon',
-    title: 'Making patience feel like a choice',
-    body: 'An idle game lives or dies on the shape of its curve. Tuning the early upgrades so reinvesting feels like a decision rather than the only option.',
   },
 ];

@@ -28,3 +28,12 @@ export const pages = [
     },
   },
 ];
+
+/* Old addresses that should forward to a new one. The build writes a tiny
+   forwarding page at each `from` (query string and #hash are kept). */
+export const redirects = [
+  { from: '/FI/', to: '/fi/' },   // fi used to live at /FI/
+];
+
+/* Extra addresses for sitemap.xml (pages and project pages are added automatically). */
+export const sitemapExtra = ['/fi/'];

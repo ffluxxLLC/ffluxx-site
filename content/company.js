@@ -1,5 +1,6 @@
 /* ============================================================
    COMPANY — facts that appear on more than one site.
+   Projects are in content/projects/, one file each.
    Change a domain, colour or email here and every site follows.
    ============================================================ */
 
@@ -28,6 +29,11 @@ export const divisions = {
     blurb: 'Apps and tools for everyday problems that nobody has bothered to solve properly.',
     headerLabel: 'ffluxxSoft — apps and websites',
     // the links ffluxx.com swaps in while it hands off to this division
+    // project pages live at soft.ffluxx.com/apps/<file name>/
+    projectPath: 'apps',
+    projectNoun: ['app', 'apps'],
+    artLabel: 'Screens pending',
+    notifyLabel: 'Get notified about {name}',
     handoffNav: [
       ['Our work', 'https://soft.ffluxx.com/#work'],
       ['Services', 'https://soft.ffluxx.com/services/'],
@@ -47,6 +53,11 @@ export const divisions = {
     blurb: 'Video games — systems you can turn over in your hands and worlds worth staying in.',
     headerLabel: 'ffluxxStudio — video games',
     footerEmail: false,   // studio's footer has never listed the email address
+    // project pages live at studio.ffluxx.com/games/<file name>/
+    projectPath: 'games',
+    projectNoun: ['game', 'games'],
+    artLabel: 'Key art pending',
+    notifyLabel: 'Tell me when it is',
     handoffNav: [
       ['Games', 'https://studio.ffluxx.com/#games'],
       ['Devlog', 'https://studio.ffluxx.com/#devlog'],

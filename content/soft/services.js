@@ -5,7 +5,7 @@
 
 export const nav = [
   { label: 'Services', href: '/services/', here: true },
-  { label: 'Our apps', href: '/#apps', hideSm: true },
+  { label: 'Our apps', href: '/#first-party', hideSm: true },
   { label: 'Get a quote', href: '#quote' },
 ];
 
@@ -83,11 +83,14 @@ export const proof = {
   eyebrow: 'What you can judge us on',
   title: 'The work is public',
   paragraphs: [
-    "ffluxx builds its own software — two apps under ffluxxSoft and two games under ffluxxStudio, all in development and all documented in the open as they're made.",
+    // counts are filled in from shared/data/projects.js
+    ({ apps, games, live }) => live === 'no'
+      ? `ffluxx builds its own software — ${apps} apps under ffluxxSoft and ${games} games under ffluxxStudio, all in development and all documented in the open as they're made.`
+      : `ffluxx builds its own software — ${apps} apps under ffluxxSoft and ${games} games under ffluxxStudio. ${live[0].toUpperCase() + live.slice(1)} ${live === 'one' ? 'is' : 'are'} live, and the rest are documented in the open as they're made.`,
     "This site and the two beside it were designed and built in-house, from the typography to the mark to the wave that follows your scroll. If you want to know what we'd make for you, the most honest answer available is what we make for ourselves.",
   ],
   links: [
-    { label: 'See the apps', href: '/#apps' },
+    { label: 'See the apps', href: '/#first-party' },
     { label: 'See the games', href: 'https://studio.ffluxx.com' },
   ],
 };

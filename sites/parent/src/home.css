@@ -222,3 +222,5 @@
   html{scroll-behavior:auto;}
   .item{opacity:1;transform:none;}
 }
+/* dictionary line under the name — set by `definition` in content/parent/home.js */
+.statement .definition{font-family:var(--mono);font-size:13px;letter-spacing:.02em;color:var(--muted);margin:16px 0 0;max-width:30ch;line-height:1.5;}

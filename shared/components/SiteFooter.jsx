@@ -1,4 +1,4 @@
-import { company, footerLinks } from '../data/company.js';
+import { company, footerLinks } from '../../content/company.js';
 import { MiniMark } from './WaveMark.jsx';
 
 /* division: a divisions.* entry, or omit on ffluxx.com */

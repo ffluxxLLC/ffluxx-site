@@ -1,4 +1,6 @@
-import { divisions } from '@shared/data/company.js';
+import { divisions } from '@content/company.js';
+import { projects, projectsIn, liveCount } from '@shared/data/projects.js';
+import { word } from '@shared/lib/copy.js';
 import { DivisionHeader } from '@shared/components/DivisionHeader.jsx';
 import { SiteFooter } from '@shared/components/SiteFooter.jsx';
 import { SectionHead } from '@shared/components/SectionHead.jsx';
@@ -6,9 +8,14 @@ import { Rich } from '@shared/components/Rich.jsx';
 import { ProcessFlow } from '../components/ProcessFlow.jsx';
 import { Tiers } from '../components/Tier.jsx';
 import { QuoteProvider, QuoteForm } from '../components/QuoteForm.jsx';
-import * as c from '../content/services.js';
+import * as c from '@content/soft/services.js';
 
 const soft = divisions.soft;
+const counts = {
+  apps: word(projectsIn('soft').length),
+  games: word(projectsIn('studio').length),
+  live: word(liveCount(projects)),
+};
 
 export default function Services() {
   return (
@@ -20,7 +27,7 @@ export default function Services() {
             <div className="hero-grid">
               <div>
                 <span className="eyebrow">{c.hero.eyebrow}</span>
-                <h1>{c.hero.title}<em>{c.hero.titleEm}</em></h1>
+                <h1>{c.hero.title.trimEnd() + " "}<em>{c.hero.titleEm}</em></h1>
               </div>
               <p><Rich text={c.hero.body} bold="strong" /></p>
             </div>
@@ -68,7 +75,7 @@ export default function Services() {
                 <h2 style={{ fontFamily: 'var(--display)', fontWeight: 700, fontSize: 'clamp(24px,3.2vw,36px)', letterSpacing: '-.03em', margin: '12px 0 0' }}>{c.proof.title}</h2>
               </div>
               <div>
-                {c.proof.paragraphs.map((p) => <p key={p}>{p}</p>)}
+                {c.proof.paragraphs.map((p, i) => <p key={i}>{typeof p === 'function' ? p(counts) : p}</p>)}
                 <p>
                   {c.proof.links.map((l, i) => [
                     i > 0 && ' \u00a0·\u00a0 ',
