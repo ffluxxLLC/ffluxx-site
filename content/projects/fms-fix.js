@@ -58,7 +58,7 @@ export default {
   // its path here, e.g. '/projects/project-name.png'. Leave out for the
   // placeholder wave art (`seed` picks its shape — any number).
   // image: '/projects/project-name.png',
-  seed: 'sites/soft/public/projects/fms-fix.png',
+  image: '/projects/fms-fix.png' ,
 
   // updates, newest first. They also appear in the division's Build notes
   // (soft) or Devlog (studio). date is YYYY-MM-DD; title is optional.
