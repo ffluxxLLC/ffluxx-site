@@ -2,7 +2,7 @@ export default {
   name: 'fi',
   division: 'soft',
   status: 'live',
-  order: 2,
+  order: 3,
 
   summary: 'A financial independence calculator. Put in what you have, what you add each month and what you spend in a year, and it tells you how long until the investments cover the expenses.',
   tag: 'Web',
