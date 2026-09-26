@@ -52,7 +52,7 @@ export default {
   // main button. Leave out href while there's nothing to link to and it
   // shows as a greyed-out "not up yet" button. Leave out `link` entirely
   // for no button. Projects that aren't live also get a "notify me" button.
-  link: { label: 'Store page not up yet' , href: 'https://fms-fix.com'  },
+  link: { label: 'Visit fms-fix.com here' , href: 'https://fms-fix.com'  },
 
   // artwork: put the file in sites/<soft|studio>/public/projects/ and write
   // its path here, e.g. '/projects/project-name.png'. Leave out for the
