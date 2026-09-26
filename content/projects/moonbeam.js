@@ -21,7 +21,7 @@ export default {
   order: 1,                   // position in every list, lowest first
 
   // one or two sentences — shown on every card and at the top of the page
-  summary: 'Moonbeam.us is the company homepage of Moonbeam.',
+  summary: 'Moon-beam.us is the company homepage of Moonbeam.',
 
   // the small pill beside the status: platform for apps, genre for games
   tag: 'Website',
@@ -49,7 +49,7 @@ export default {
   // main button. Leave out href while there's nothing to link to and it
   // shows as a greyed-out "not up yet" button. Leave out `link` entirely
   // for no button. Projects that aren't live also get a "notify me" button.
-  link: { label: 'Store page not up yet'  , href: 'https://moon-beam.us'  },
+  link: { label: 'Visit Moonbeam.us', href: 'https://moon-beam.us' },
 
   // artwork: put the file in sites/<soft|studio>/public/projects/ and write
   // its path here, e.g. '/projects/project-name.png'. Leave out for the
