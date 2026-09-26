@@ -18,7 +18,7 @@ export default {
   name: 'Moonbeam Website',
   division: 'soft',            // 'soft' or 'studio'
   status: 'dev',               // 'dev' → "In development", 'live' → "Available now"
-  order: 10,                   // position in every list, lowest first
+  order: 1,                   // position in every list, lowest first
 
   // one or two sentences — shown on every card and at the top of the page
   summary: 'Moonbeam.us is the company homepage of Moonbeam.',
