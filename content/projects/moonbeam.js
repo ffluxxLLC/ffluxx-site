@@ -49,7 +49,7 @@ export default {
   // main button. Leave out href while there's nothing to link to and it
   // shows as a greyed-out "not up yet" button. Leave out `link` entirely
   // for no button. Projects that aren't live also get a "notify me" button.
-  link: { label: 'Visit Moonbeam.us', href: 'https://moon-beam.us' },
+  link: { label: 'Visit moon-beam.us', href: 'https://moon-beam.us' },
 
   // artwork: put the file in sites/<soft|studio>/public/projects/ and write
   // its path here, e.g. '/projects/project-name.png'. Leave out for the
