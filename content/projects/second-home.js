@@ -2,6 +2,7 @@ export default {
   name: 'Second Home',
   division: 'soft',
   status: 'dev',
+  progress: 'Core matching in progress',
   order: 2,
 
   summary: "A marketplace for the other half. Lost the right shoe, missing one earring, one card short of the set — list what you've got and find whoever has the piece you're missing.",
@@ -18,7 +19,6 @@ export default {
 
   facts: [
     ['Platform', 'iOS, with Android to follow'],
-    ['Status', 'Core matching in progress'],
     ['Availability', 'No date yet'],
   ],
 

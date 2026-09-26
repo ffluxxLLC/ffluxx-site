@@ -23,7 +23,11 @@ function check(id, p) {
   }
   (p.facts || []).forEach((f, i) => {
     if (!Array.isArray(f) || f.length !== 2) fail(`facts[${i}] must be a pair: ['Label', 'Value']`);
+    if (String(f[0]).trim().toLowerCase() === 'status') {
+      fail("remove the ['Status', …] fact — the Status line is filled in from `status` (and `progress`, if you want your own wording)");
+    }
   });
+  if (p.progress !== undefined && (typeof p.progress !== 'string' || !p.progress)) fail('`progress` must be some text, or left out');
   (p.updates || []).forEach((u, i) => {
     if (!DATE.test(u.date || '') || isNaN(new Date(u.date))) fail(`updates[${i}].date must look like '2026-10-01'`);
     if (typeof u.body !== 'string' || !u.body) fail(`updates[${i}] needs a \`body\``);
@@ -44,6 +48,12 @@ export function buildProjects(entries) {
     })
     .sort((a, b) => a.order - b.order || a.id.localeCompare(b.id));
 }
+
+/* The details box: a Status line from `status`/`progress`, then the facts. */
+export const detailRows = (p) => [
+  ['Status', p.progress || (p.status === 'live' ? 'Live' : 'In development')],
+  ...p.facts,
+];
 
 export const projectPath = (p) => `/${divisions[p.division].projectPath}/${p.id}/`;
 export const projectUrl = (p) => divisions[p.division].url + projectPath(p);

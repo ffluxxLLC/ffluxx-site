@@ -2,7 +2,7 @@
    Every project, read from content/projects/*.js (one file each).
    Nothing to edit here — add or change files in content/projects/.
    ============================================================ */
-import { buildProjects, idFromPath, projectPath, projectUrl } from '../lib/projects-core.js';
+import { buildProjects, idFromPath, projectPath, projectUrl, detailRows } from '../lib/projects-core.js';
 
 const files = import.meta.glob(['../../content/projects/*.js', '!../../content/projects/_*.js'], { eager: true });
 
@@ -10,7 +10,7 @@ export const projects = buildProjects(
   Object.entries(files).map(([file, mod]) => [idFromPath(file), mod.default]),
 );
 
-export { projectPath, projectUrl };
+export { projectPath, projectUrl, detailRows };
 export const projectsIn = (division) => projects.filter((p) => p.division === division);
 export const liveCount = (list) => list.filter((p) => p.status === 'live').length;
 export const findProject = (id) => projects.find((p) => p.id === id);

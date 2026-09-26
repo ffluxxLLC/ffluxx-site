@@ -45,6 +45,11 @@ top of that project's `updates`. It shows on the project page and in Build
 notes / Devlog. (Soft's Build notes show it as "Name — body", so the body can
 start lowercase; the project page capitalises it.)
 
+**Status:** `status: 'dev'` or `'live'` drives the pill, the buttons and the
+signup form. The Status line in the details box comes from it too — add
+`progress: 'Core matching in progress'` for your own wording. Don't put a
+Status row in `facts`; the build rejects it so the two can't disagree.
+
 **Make something live:** `status: 'live'` and give it a `link` with an `href`.
 
 **Add artwork:** put the image in `sites/soft/public/projects/` (or studio's)

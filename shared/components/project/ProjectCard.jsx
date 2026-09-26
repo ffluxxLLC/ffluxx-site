@@ -1,5 +1,5 @@
 import { divisions } from '../../../content/company.js';
-import { projectPath, projectUrl } from '../../data/projects.js';
+import { projectPath, projectUrl, detailRows } from '../../data/projects.js';
 import { useReveal } from '../../lib/useReveal.js';
 import { StatusPill } from '../Pills.jsx';
 import { Arrowed } from '../Arrowed.jsx';
@@ -57,11 +57,9 @@ function AppCard({ p, flip, artLabel }) {
         <h3><a className="card-link" href={projectPath(p)}>{p.name}</a></h3>
         <p className="lede"><Rich text={p.summary} /></p>
         {p.features.length > 0 && <ul className="does">{p.features.map((f) => <li key={f}><Rich text={f} /></li>)}</ul>}
-        {p.facts.length > 0 && (
-          <dl className="release">
-            {p.facts.map(([k, v]) => [<dt key={k}>{k}</dt>, <dd key={k + ':'}>{v}</dd>])}
-          </dl>
-        )}
+        <dl className="release">
+          {detailRows(p).map(([k, v]) => [<dt key={k}>{k}</dt>, <dd key={k + ':'}>{v}</dd>])}
+        </dl>
         <ProjectActions project={p} />
       </div>
     </article>
@@ -84,11 +82,9 @@ function GameCard({ p, artLabel }) {
           {p.about[0] && <p className="more"><Rich text={p.about[0]} /></p>}
           <div className="actions"><ProjectActions project={p} /></div>
         </div>
-        {p.facts.length > 0 && (
-          <dl className="facts">
-            {p.facts.map(([k, v]) => <div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}
-          </dl>
-        )}
+        <dl className="facts">
+          {detailRows(p).map(([k, v]) => <div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}
+        </dl>
       </div>
     </article>
   );

@@ -2,6 +2,7 @@ export default {
   name: 'Plant Guide',
   division: 'soft',
   status: 'dev',
+  progress: 'Care model in progress',
   order: 3,
 
   summary: 'Step-by-step care for everything in your garden, tuned to where you actually live. Your soil, your light, your climate — not generic advice for a plant in the abstract.',
@@ -18,7 +19,6 @@ export default {
 
   facts: [
     ['Platform', 'iOS, with Android to follow'],
-    ['Status', 'Care model in progress'],
     ['Availability', 'No date yet'],
   ],
 

@@ -17,7 +17,6 @@ export default {
     ['Genre', 'Idle / clicker'],
     ['Setting', 'Contemporary, abstract'],
     ['Platform', 'Not decided yet'],
-    ['Status', 'In development'],
     ['Release', 'No date yet'],
   ],
 

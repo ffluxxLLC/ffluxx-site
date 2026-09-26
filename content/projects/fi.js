@@ -18,7 +18,6 @@ export default {
 
   facts: [
     ['Platform', 'Web, any browser'],
-    ['Status', 'Live'],
     ['Availability', 'Free, no sign-up'],
   ],
 

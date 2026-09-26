@@ -18,6 +18,9 @@ export default {
   name: 'Project Name',
   division: 'soft',            // 'soft' or 'studio'
   status: 'dev',               // 'dev' → "In development", 'live' → "Available now"
+  // optional: where it's at, in your words. Shown as the Status line in the
+  // details box instead of plain "In development" / "Live".
+  progress: 'Core features in progress',
   order: 10,                   // position in every list, lowest first
 
   // one or two sentences — shown on every card and at the top of the page
@@ -39,10 +42,10 @@ export default {
     'Another thing it does',
   ],
 
-  // the fact sheet: [label, value] pairs
+  // the details box: [label, value] pairs. Don't add a Status row — it's
+  // filled in automatically from `status` and `progress` above.
   facts: [
     ['Platform', 'iOS, with Android to follow'],
-    ['Status', 'In development'],
     ['Availability', 'No date yet'],
   ],
 

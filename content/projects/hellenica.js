@@ -17,7 +17,6 @@ export default {
     ['Genre', 'Real-time grand strategy'],
     ['Setting', 'The Hellenic world to the early Roman Empire'],
     ['Platform', 'PC'],
-    ['Status', 'In development'],
     ['Release', 'No date yet'],
   ],
 

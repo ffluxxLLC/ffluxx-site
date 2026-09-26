@@ -1,5 +1,5 @@
 import { divisions } from '../../../content/company.js';
-import { projectsIn, projectPath } from '../../data/projects.js';
+import { projectsIn, projectPath, detailRows } from '../../data/projects.js';
 import { formatDate } from '../../lib/date.js';
 import { word } from '../../lib/copy.js';
 import { DivisionHeader } from '../DivisionHeader.jsx';
@@ -24,7 +24,7 @@ export function ProjectPage({ project: p, site }) {
   const [one, many] = d.projectNoun;
   const others = projectsIn(p.division).filter((o) => o.id !== p.id);
   const isGame = d.key === 'studio';
-  const hasBody = p.about.length > 0 || p.features.length > 0 || p.facts.length > 0;
+  const hasBody = true;   // the details box always has at least the Status line
   const signup = site.signup;
 
   return (
@@ -70,14 +70,12 @@ export function ProjectPage({ project: p, site }) {
                   </div>
                 )}
               </div>
-              {p.facts.length > 0 && (
-                <aside className="pp-block">
-                  <span className="eyebrow">Details</span>
-                  <dl className="pp-facts">
-                    {p.facts.map(([k, v]) => <div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}
-                  </dl>
-                </aside>
-              )}
+              <aside className="pp-block">
+                <span className="eyebrow">Details</span>
+                <dl className="pp-facts">
+                  {detailRows(p).map(([k, v]) => <div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}
+                </dl>
+              </aside>
             </div>
           </section>
         )}
