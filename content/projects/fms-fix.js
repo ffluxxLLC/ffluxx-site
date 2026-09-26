@@ -45,7 +45,7 @@ export default {
   // the details box: [label, value] pairs. Don't add a Status row — it's
   // filled in automatically from `status` and `progress` above.
   facts: [
-    ['Platform', 'Website'],
+    ['Platform', 'Web'],
     ['Availability', 'Available now'],
   ],
 
