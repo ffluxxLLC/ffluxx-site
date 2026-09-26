@@ -8,7 +8,7 @@ export const company = {
   name: 'ffluxx',
   url: 'https://ffluxx.com',
   domain: 'ffluxx.com',
-  email: 'hello@ffluxx.com',
+  email: 'contact@ffluxx.com',
   copyright: '© 2026 ffluxx',
   // the parent mark is the two divisions' lead waves together
   wave: ['#7B5CFF', '#E9DC4E'],
@@ -70,5 +70,5 @@ export const footerLinks = [
   { label: 'ffluxx.com',        href: 'https://ffluxx.com' },
   { label: 'soft.ffluxx.com',   href: 'https://soft.ffluxx.com',   division: 'soft' },
   { label: 'studio.ffluxx.com', href: 'https://studio.ffluxx.com', division: 'studio' },
-  { label: 'hello@ffluxx.com',  href: 'mailto:hello@ffluxx.com', email: true },
+  { label: 'contact@ffluxx.com',  href: 'mailto:hello@ffluxx.com', email: true },
 ];
