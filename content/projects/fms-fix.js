@@ -15,7 +15,7 @@
    ============================================================ */
 
 export default {
-  name: 'Falcon Mobile Services Homepage',
+  name: 'Falcon Mobile Services Website',
   division: 'soft',            // 'soft' or 'studio'
   status: 'live',               // 'dev' → "In development", 'live' → "Available now"
   // optional: where it's at, in your words. Shown as the Status line in the
